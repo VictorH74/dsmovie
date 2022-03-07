@@ -1,6 +1,12 @@
+
+// METODO QUE RETORNA UM CODIGO EM FORMATO 'jsx'
+
+import Navbar from "./components/Navbar";
+
+// 'jsx' PARECIDO COM HTML / PERMITE COLOCAR CODIGOS DO REACT
 function App() {
   return (
-    <h1>Página principal</h1>
+    <Navbar/>
   );
 }
 

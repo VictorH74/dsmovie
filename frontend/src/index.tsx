@@ -6,7 +6,7 @@ import App from './App';
 
 
 // METODO DO REACT QUE PEGA A DIV DE ID 'root' EM 'index.html'
-// E REDENRIZAR DENTRO DELE, O COMPONENT <App />
+// E REDENRIZA DENTRO DELE, O COMPONENT <App />
 ReactDOM.render(
   <React.StrictMode>
     <App />

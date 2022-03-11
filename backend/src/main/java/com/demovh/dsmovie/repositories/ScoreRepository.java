@@ -6,5 +6,5 @@ import com.demovh.dsmovie.entities.Score;
 import com.demovh.dsmovie.entities.ScorePK;
 
 public interface ScoreRepository extends JpaRepository<Score, ScorePK>{
-// FOR SCORE 
+# FOR SCORE 
 }

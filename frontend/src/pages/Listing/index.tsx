@@ -11,7 +11,7 @@ import { BASE_URL } from "utils/requests";
 
 function Listing() {
 
-/*  REACTS HOOKS: useState E useEffect -> Hooks são funções cujo comportamento está vinculado ao estado e
+ /* REACTS HOOKS: useState E useEffect -> Hooks são funções cujo comportamento está vinculado ao estado e
                   ao ciclo de vida do React a partir de componentes funcionais.
 
     CONTROLAR CICLO DE VIDA DO COMPONENTE
@@ -20,9 +20,9 @@ function Listing() {
     Hook: useEffect -> Executar algo na instanciação ou destruição do componente, observar estado
 
     https://pt-br.reactjs.org/docs/hooks-overview.html -> MAIS INFORMAÇÕES
-*/
+ */
 
-/*  DEFININDO UM useState
+ /* DEFININDO UM useState
            [NUMERO DA PAG, FUNÇÃO QUE ALTERA O ESTADO] = useState(VALOR INICIAL DA PAG.) */
     const [pageNumber, setPageNumber] = useState(0);
 
@@ -39,7 +39,7 @@ function Listing() {
     });
 
     useEffect(() => {
-
+        // REQUISIÇÃO WEB
          axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`) // "&sort=id" ORDENAR BUSCA POR ID
             .then(response  => { // COMANDO A SER EXECUTADO DEPOIS QUE A REQUEST GET RETORNAR UM OBJ
                 const data = response.data as MoviePage;
@@ -48,12 +48,15 @@ function Listing() {
 
     }, [pageNumber]); // RODAR O COMANDO ACIMA QUANDO O VALOR DE "pageNumber" FOR ALTERADO
 
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
 
     return (
         <>
-            <Pagination />
-            <div className="container">
+            <Pagination page={page} onChange={handlePageChange} />
 
+            <div className="container">
                 <div className="row">
 
                     {page.content.map(item => ( // ".map()" EXECUTA UMA FUNÇÃO PARA CADA ITEM DOS DADOS EM "page.content"
@@ -68,8 +71,6 @@ function Listing() {
                     )}
 
                 </div>
-                
-
             </div>
 
 

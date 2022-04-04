@@ -1,6 +1,6 @@
 # Website for movie scores
 
-## Used Technologies
+## Technologies used
 
 <div>
   <img width="40em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
